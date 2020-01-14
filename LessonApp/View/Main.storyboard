@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cIr-OY-oSz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rNm-8A-WTq">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -182,7 +182,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vector1" translatesAutoresizingMaskIntoConstraints="NO" id="8Fg-kL-SmD">
-                                                            <rect key="frame" x="10" y="0.0" width="303.00000000000006" height="165"/>
+                                                            <rect key="frame" x="10" y="0.0" width="303" height="165"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="165" id="rRM-Q3-oVp"/>
                                                             </constraints>
@@ -1205,19 +1205,9 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="zbm-5g-XPa">
-                                                                        <rect key="frame" x="10" y="0.0" width="284" height="60"/>
+                                                                        <rect key="frame" x="20" y="0.0" width="274" height="60"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
-                                                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
-                                                                                <real key="value" value="30"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
-                                                                                <real key="value" value="0.5"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
+                                                                        <locale key="locale" localeIdentifier="ar_EG"/>
                                                                     </datePicker>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1227,12 +1217,18 @@
                                                                     <constraint firstAttribute="height" constant="60" id="Lqd-Ib-8Y0"/>
                                                                     <constraint firstAttribute="bottom" secondItem="zbm-5g-XPa" secondAttribute="bottom" id="Wry-I2-lgV"/>
                                                                     <constraint firstItem="k3r-Yq-uEI" firstAttribute="centerY" secondItem="P0k-fu-B5a" secondAttribute="centerY" id="YM9-ua-psL"/>
-                                                                    <constraint firstItem="zbm-5g-XPa" firstAttribute="leading" secondItem="P0k-fu-B5a" secondAttribute="leading" constant="10" id="lAY-cd-iPm"/>
+                                                                    <constraint firstItem="zbm-5g-XPa" firstAttribute="leading" secondItem="P0k-fu-B5a" secondAttribute="leading" constant="20" id="lAY-cd-iPm"/>
                                                                     <constraint firstAttribute="trailing" secondItem="k3r-Yq-uEI" secondAttribute="trailing" constant="10" id="nlQ-zt-azO"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
                                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                                        <real key="value" value="30"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
+                                                                        <real key="value" value="0.5"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -1268,6 +1264,9 @@
                                                                                         <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="selectGender:" destination="cIr-OY-oSz" eventType="touchUpInside" id="NPJ-gD-JOY"/>
+                                                                                </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PB-GY-N9i">
                                                                                 <rect key="frame" x="105" y="0.0" width="95" height="50"/>
@@ -1286,6 +1285,9 @@
                                                                                         <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
+                                                                                <connections>
+                                                                                    <action selector="selectGender:" destination="cIr-OY-oSz" eventType="touchUpInside" id="YOE-35-whk"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1328,8 +1330,7 @@
                                                                         <color key="tintColor" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <state key="normal" backgroundImage="indicator"/>
                                                                         <connections>
-                                                                            <action selector="approveAction" destination="cIr-OY-oSz" eventType="touchUpInside" id="ak5-8Y-H5z"/>
-                                                                            <action selector="rememberMe:" destination="koH-yH-KN2" eventType="touchUpInside" id="Upc-8F-rgg"/>
+                                                                            <action selector="approveActionWithSender:" destination="cIr-OY-oSz" eventType="touchUpInside" id="Y2E-yg-Anm"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أوافق على" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-OZ-eD4">
@@ -1441,6 +1442,7 @@
                         <outlet property="femaleBtn" destination="2Qh-kG-Y15" id="5Ck-c8-1WM"/>
                         <outlet property="maleBtn" destination="7PB-GY-N9i" id="ynD-XT-8NM"/>
                         <outlet property="scrollView" destination="ujP-Td-Y8A" id="bQg-AO-t4k"/>
+                        <outlet property="scrollViewContainer" destination="2nr-I5-0Ww" id="bXR-fy-j7A"/>
                         <outletCollection property="textFields" destination="WlJ-Ep-ak5" collectionClass="NSMutableArray" id="cDU-YW-wnI"/>
                         <outletCollection property="textFields" destination="vij-mC-dVM" collectionClass="NSMutableArray" id="7jq-J3-RtB"/>
                         <outletCollection property="textFields" destination="J0F-ea-0KO" collectionClass="NSMutableArray" id="wnm-gE-dOA"/>
@@ -1454,6 +1456,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrI-CB-a85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3269.5652173913045" y="144.64285714285714"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="XG5-IR-vA1">
+            <objects>
+                <viewController id="rNm-8A-WTq" customClass="HomeVC" customModule="LessonApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IMJ-0o-seu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEs-SQ-1IT">
+                                <rect key="frame" x="67" y="94" width="280" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0X-7E-OnT">
+                                        <rect key="frame" x="140" y="0.0" width="140" height="40"/>
+                                        <color key="backgroundColor" red="0.1083643213" green="0.099288769070000005" blue="0.1019618139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="V4b-0e-YaY"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="move:" destination="rNm-8A-WTq" eventType="touchUpInside" id="qSD-Hb-po9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzl-KO-P6n">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
+                                        <color key="backgroundColor" red="0.1083643213" green="0.099288769070000005" blue="0.1019618139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="fEf-18-sYF"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="move:" destination="rNm-8A-WTq" eventType="touchUpInside" id="77W-TW-ICO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yee-qZ-DvW">
+                                        <rect key="frame" x="100" y="0.0" width="180" height="40"/>
+                                        <color key="backgroundColor" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="FPb-ep-nKO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="fzl-KO-P6n" firstAttribute="leading" secondItem="qEs-SQ-1IT" secondAttribute="leading" id="1b2-Ut-DZX"/>
+                                    <constraint firstItem="Yee-qZ-DvW" firstAttribute="top" secondItem="qEs-SQ-1IT" secondAttribute="top" id="4j8-IV-WdK"/>
+                                    <constraint firstAttribute="bottom" secondItem="H0X-7E-OnT" secondAttribute="bottom" id="AeY-PH-vgV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yee-qZ-DvW" secondAttribute="trailing" id="IM3-6f-GDt"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yee-qZ-DvW" secondAttribute="bottom" id="RUK-9S-6eV"/>
+                                    <constraint firstAttribute="width" constant="280" id="ddd-H7-RaI"/>
+                                    <constraint firstItem="H0X-7E-OnT" firstAttribute="top" secondItem="qEs-SQ-1IT" secondAttribute="top" id="jxh-Ln-gfl"/>
+                                    <constraint firstAttribute="bottom" secondItem="fzl-KO-P6n" secondAttribute="bottom" id="k15-WH-W7J"/>
+                                    <constraint firstAttribute="height" constant="40" id="prC-UI-F1C"/>
+                                    <constraint firstAttribute="trailing" secondItem="H0X-7E-OnT" secondAttribute="trailing" id="qio-hZ-Ubb"/>
+                                    <constraint firstItem="fzl-KO-P6n" firstAttribute="top" secondItem="qEs-SQ-1IT" secondAttribute="top" id="wdr-S6-PGc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qEs-SQ-1IT" firstAttribute="top" secondItem="dFw-uu-E0a" secondAttribute="top" constant="50" id="VCo-AV-GmW"/>
+                            <constraint firstItem="qEs-SQ-1IT" firstAttribute="centerX" secondItem="IMJ-0o-seu" secondAttribute="centerX" id="vhK-FT-cDg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dFw-uu-E0a"/>
+                    </view>
+                    <connections>
+                        <outlet property="layout" destination="IM3-6f-GDt" id="4Fu-et-6be"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdU-BY-k33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4297" y="137"/>
         </scene>
     </scenes>
     <resources>

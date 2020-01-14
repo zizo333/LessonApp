@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: LoginRegisterVC {
 
     // MARK: - Variables
     var leftButton: UIButton!
@@ -43,6 +43,29 @@ class LoginVC: UIViewController {
         
     }
     
+    /***** Helper methods *****/
     
+    // MARK: - initial configuration
+    func initialConfigration() {
+        updateContainerView(containerView: self.containerView)
+        observeKeyboardState(scrollView: self.scrollView)
+        leftButton = UIButton()
+        super.TFs.append(passwordTF)
+        super.lefBtns.append(leftButton)
+        updatePasswordTF(passwordTF: passwordTF, index: 0)
+        addGesture(scrollViewContainer: self.scrollViewContainer)
+    }
 }
 
+/***** Configure return key *****/
+extension LoginVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailTF.isFirstResponder {
+            passwordTF.becomeFirstResponder()
+        } else {
+            hideKeyboard()
+        }
+        return true
+    }
+}

@@ -22,8 +22,6 @@ class IntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
     }
     
     // MARK: - Actions
