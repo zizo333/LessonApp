@@ -26,17 +26,16 @@ class RegisterVC: LoginRegisterVC {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var femaleBtn: UIButton!
     @IBOutlet weak var scrollViewContainer: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initialConfigration()
-        datePicker.date = Date()
         
     }
     
@@ -57,6 +56,14 @@ class RegisterVC: LoginRegisterVC {
         }
     }
     
+    @IBAction func selectDate() {
+        DateOfBirth.instance.delegate = self
+        DateOfBirth.instance.showDatePicker()
+    }
+    
+    @IBAction func goToLogin(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func register() {
         
@@ -87,6 +94,17 @@ class RegisterVC: LoginRegisterVC {
         genderBtn.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         genderBtn.setTitleColor(#colorLiteral(red: 0.1083643213, green: 0.09928876907, blue: 0.1019618139, alpha: 1), for: .normal)
     }
+}
+
+// MARK: - get selected date
+extension RegisterVC: DatePickerDelegate {
+    
+    func getSelectedDate(date: Date) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        dateLabel.text = formatter.string(from: date)
+    }
+    
 }
 
 /***** Configure return key *****/

@@ -27,7 +27,7 @@ class IntroVC: UIViewController {
     // MARK: - Actions
     
     @IBAction func skipAction(_ sender: UIButton) {
-        
+        goToLoginScreen()
     }
     
     @IBAction func nextAction(_ sender: UIButton) {
@@ -40,9 +40,12 @@ class IntroVC: UIViewController {
                 skipButton.isHidden = true
             }
             currentIndex += 1
+        } else {
+            goToLoginScreen()
         }
     }
     
+    // MARK: - Helper
     func updatePageControl() {
         pageControl[currentIndex - 1].backgroundColor = .white
         pageControl[currentIndex - 1].layer.borderColor = #colorLiteral(red: 0.1083643213, green: 0.09928876907, blue: 0.1019618139, alpha: 1)
@@ -50,6 +53,11 @@ class IntroVC: UIViewController {
         pageControl[currentIndex].backgroundColor = #colorLiteral(red: 0.7763929963, green: 0.4258784652, blue: 0.128765732, alpha: 1)
         pageControl[currentIndex].layer.borderColor = #colorLiteral(red: 0.7763929963, green: 0.4258784652, blue: 0.128765732, alpha: 1)
         
+    }
+    
+    func goToLoginScreen() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginVC") as! LoginVC
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

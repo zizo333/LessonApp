@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateOfBirth" customModule="LessonApp" customModuleProvider="target">
+            <connections>
+                <outlet property="datePicker" destination="gAG-Ua-ri8" id="tOB-Gs-byX"/>
+                <outlet property="parentView" destination="iN0-l3-epB" id="jNs-e8-ONk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFI-po-3K0">
+                    <rect key="frame" x="77" y="318" width="260" height="260"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-Ua-ri8">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="200"/>
+                            <locale key="locale" localeIdentifier="ar_EG"/>
+                        </datePicker>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrp-bh-agC">
+                            <rect key="frame" x="0.0" y="220" width="260" height="40"/>
+                            <color key="backgroundColor" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="ccw-5K-B10"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <state key="normal" title="موافق">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="agreeAction" destination="-1" eventType="touchUpInside" id="3Pq-Zh-E9w"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="260" id="A6t-SM-fgO"/>
+                        <constraint firstItem="Qrp-bh-agC" firstAttribute="top" secondItem="gAG-Ua-ri8" secondAttribute="bottom" constant="20" id="Dr1-xW-m7K"/>
+                        <constraint firstAttribute="bottom" secondItem="Qrp-bh-agC" secondAttribute="bottom" id="Gfd-Xd-TaA"/>
+                        <constraint firstItem="gAG-Ua-ri8" firstAttribute="top" secondItem="CFI-po-3K0" secondAttribute="top" id="KeL-p2-P0J"/>
+                        <constraint firstItem="Qrp-bh-agC" firstAttribute="leading" secondItem="CFI-po-3K0" secondAttribute="leading" id="LxA-U4-WtA"/>
+                        <constraint firstAttribute="trailing" secondItem="gAG-Ua-ri8" secondAttribute="trailing" id="UPc-Yx-dYa"/>
+                        <constraint firstItem="gAG-Ua-ri8" firstAttribute="leading" secondItem="CFI-po-3K0" secondAttribute="leading" id="XnC-hW-Kez"/>
+                        <constraint firstAttribute="trailing" secondItem="Qrp-bh-agC" secondAttribute="trailing" id="dwD-XZ-eq2"/>
+                        <constraint firstAttribute="height" constant="260" id="ebu-dO-Wyh"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
+                            <color key="value" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.87956204379562042" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CFI-po-3K0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="TYX-bo-Y9o"/>
+                <constraint firstItem="CFI-po-3K0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aD6-IZ-A9l"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>

@@ -25,7 +25,11 @@ class Notes: UIViewController {
         containerView.layer.cornerRadius = 40
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        /***********  ***********/
+        /*********** Date formatter ***********/
+        let formatter = DateFormatter()
+        let date = Date()
+        formatter.dateFormat = "dd/MM/yyyy"
+        print(formatter.string(from: date))
         
     }
     
