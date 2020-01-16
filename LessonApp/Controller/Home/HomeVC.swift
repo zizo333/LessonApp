@@ -15,7 +15,9 @@ class HomeVC: UIViewController {
     @IBOutlet weak var swipeButton: UIButton!
     @IBOutlet weak var showRatingLayout: NSLayoutConstraint!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var notesLabel: UILabel!
     // MARK: - Rating outlets
     @IBOutlet weak var ratingTableView: UITableView!
     
@@ -23,7 +25,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
 
         updateContainerView()
-        ratingTableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     // MARK: - Actions
@@ -52,6 +53,19 @@ extension HomeVC {
     // MARK: - Update container view corners
     func updateContainerView() {
         containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    // MARK: - get height of notes container view
+    // change height of scroll view
+    func getHeight(text: String?, width: CGFloat, font: UIFont) -> CGFloat {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.text = text
+        label.font = font
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.sizeToFit()
+        let height: CGFloat = label.frame.height
+        label.removeFromSuperview()
+        return height
     }
 }
 
@@ -88,20 +102,24 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RatingCell
         
         if indexPath.row == 2 {
-            cell.textLabel?.text = "Ali"
-            cell.detailTextLabel?.text = "A label can contain an arbitrary amount of text, but UILabel may shrink, wrap, or truncate the text"
+            cell.studentNameLabel.text = "على"
+            cell.studentOpenionLabel.text = "ايبسوم بالعربي عربي انجليزي لوريم  "
         } else {
-            cell.textLabel?.text = "Zizo"
-            cell.detailTextLabel?.text = "A label can contain an arbitrary amount of text, but UILabel may shrink, wrap, or truncate the text, depending on the size of the bounding rectangle and properties you set. You can control the font, text color, alignment, highlighting, and shadowing of the text in the label."
+            cell.studentNameLabel.text = "محمد"
+            cell.studentOpenionLabel.text = "ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم  "
         }
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
     
 }
