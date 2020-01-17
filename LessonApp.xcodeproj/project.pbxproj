@@ -27,8 +27,10 @@
 		24298C4F23CEE64B00CF386C /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24298C4E23CEE64B00CF386C /* SubjectCell.swift */; };
 		2448C78323CE7EE600003ED7 /* DateOfBirth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2448C78223CE7EE600003ED7 /* DateOfBirth.xib */; };
 		2448C78523CE88F500003ED7 /* DateOfBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448C78423CE88F500003ED7 /* DateOfBirth.swift */; };
+		24B5611323D12A16002CBEA3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5611223D12A16002CBEA3 /* HomeVC.swift */; };
+		24B5611523D16427002CBEA3 /* TeachersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5611423D16427002CBEA3 /* TeachersCell.swift */; };
 		24DF220923CFF1DB006BC9DA /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DF220823CFF1DB006BC9DA /* RatingCell.swift */; };
-		24F29A3A23CDB1CB00C004A1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F29A3923CDB1CB00C004A1 /* HomeVC.swift */; };
+		24F29A3A23CDB1CB00C004A1 /* TeacherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */; };
 		CA55DA6884F4133AACD24ACB /* Pods_LessonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8878EE89B0E88D1CF7FC2B86 /* Pods_LessonApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +57,10 @@
 		24298C4E23CEE64B00CF386C /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		2448C78223CE7EE600003ED7 /* DateOfBirth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateOfBirth.xib; sourceTree = "<group>"; };
 		2448C78423CE88F500003ED7 /* DateOfBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.swift; sourceTree = "<group>"; };
+		24B5611223D12A16002CBEA3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		24B5611423D16427002CBEA3 /* TeachersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersCell.swift; sourceTree = "<group>"; };
 		24DF220823CFF1DB006BC9DA /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
-		24F29A3923CDB1CB00C004A1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherVC.swift; sourceTree = "<group>"; };
 		8878EE89B0E88D1CF7FC2B86 /* Pods_LessonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LessonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16EF864BB827FEF7A492043 /* Pods-LessonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LessonApp.debug.xcconfig"; path = "Target Support Files/Pods-LessonApp/Pods-LessonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CB88D7C971CCF9CEBC101505 /* Pods-LessonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LessonApp.release.xcconfig"; path = "Target Support Files/Pods-LessonApp/Pods-LessonApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 				2428963B23CC963B0009B9DD /* IntroCollectionViewCell.swift */,
 				24298C4E23CEE64B00CF386C /* SubjectCell.swift */,
 				24DF220823CFF1DB006BC9DA /* RatingCell.swift */,
+				24B5611423D16427002CBEA3 /* TeachersCell.swift */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -214,7 +219,8 @@
 		24F29A3823CDB1A200C004A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				24F29A3923CDB1CB00C004A1 /* HomeVC.swift */,
+				24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */,
+				24B5611223D12A16002CBEA3 /* HomeVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -347,10 +353,11 @@
 				2428961B23CC92300009B9DD /* Notes.swift in Sources */,
 				2428964823CCD0AB0009B9DD /* HelperMethods.swift in Sources */,
 				2428963023CC92890009B9DD /* LoginVC.swift in Sources */,
+				24B5611523D16427002CBEA3 /* TeachersCell.swift in Sources */,
 				2428961723CC92300009B9DD /* AppDelegate.swift in Sources */,
 				2428961923CC92300009B9DD /* SceneDelegate.swift in Sources */,
 				24DF220923CFF1DB006BC9DA /* RatingCell.swift in Sources */,
-				24F29A3A23CDB1CB00C004A1 /* HomeVC.swift in Sources */,
+				24F29A3A23CDB1CB00C004A1 /* TeacherVC.swift in Sources */,
 				2428503A23CD22560093812C /* LoginRegisterVC.swift in Sources */,
 				2448C78523CE88F500003ED7 /* DateOfBirth.swift in Sources */,
 				2428963C23CC963B0009B9DD /* IntroCollectionViewCell.swift in Sources */,
@@ -360,6 +367,7 @@
 				2428963523CC94F00009B9DD /* IntroVC.swift in Sources */,
 				2428964D23CCDD2E0009B9DD /* RegisterVC.swift in Sources */,
 				2428964523CCA5870009B9DD /* CustomTF.swift in Sources */,
+				24B5611323D12A16002CBEA3 /* HomeVC.swift in Sources */,
 				2428962123CC92300009B9DD /* LessonApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

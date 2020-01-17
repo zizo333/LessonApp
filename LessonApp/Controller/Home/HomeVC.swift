@@ -2,7 +2,7 @@
 //  HomeVC.swift
 //  LessonApp
 //
-//  Created by Zizo Adel on 1/14/20.
+//  Created by Zizo Adel on 1/16/20.
 //  Copyright © 2020 Zizo Adel. All rights reserved.
 //
 
@@ -10,116 +10,75 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    @IBOutlet weak var rightLayout: NSLayoutConstraint!
-    @IBOutlet weak var swipeButtonsContainer: UIView!
-    @IBOutlet weak var swipeButton: UIButton!
-    @IBOutlet weak var showRatingLayout: NSLayoutConstraint!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+    // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var notesLabel: UILabel!
-    // MARK: - Rating outlets
-    @IBOutlet weak var ratingTableView: UITableView!
+    @IBOutlet weak var searchVew: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateContainerView()
+        initialUpdates()
     }
-    
-    // MARK: - Actions
-    @IBAction func move(_ sender: UIButton) {
-        
-        UIView.animate(withDuration: 0.3) {
-            self.rightLayout.constant = sender.tag == 0 ? 0 : self.swipeButtonsContainer.frame.width * 0.4
-            if self.rightLayout.constant > 0 {
-                self.swipeButton.setTitle("التقييمات", for: .normal)
-                self.showRatingLayout.constant = -1 * (self.containerView.frame.width - 30)
-            } else {
-                self.swipeButton.setTitle("الوصف", for: .normal)
-                self.showRatingLayout.constant = 0
-            }
-            self.view.layoutIfNeeded()
-        }
-    }
-    @IBAction func goToRegister(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
 }
 
-/****** Helper methods ******/
+
+/****** Update views ******/
 extension HomeVC {
-    // MARK: - Update container view corners
+    
+    // MARK: - initial updates
+    func initialUpdates() {
+        updateContainerView()
+        updateSearchView()
+    }
+    
+    // MARK: - Update containerView top corners
     func updateContainerView() {
         containerView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
-    // MARK: - get height of notes container view
-    // change height of scroll view
-    func getHeight(text: String?, width: CGFloat, font: UIFont) -> CGFloat {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
-        label.text = text
-        label.font = font
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.sizeToFit()
-        let height: CGFloat = label.frame.height
-        label.removeFromSuperview()
-        return height
+    
+    // MARK: - update search view
+    func updateSearchView() {
+        searchVew.layer.shadowColor = UIColor.black.cgColor
+        searchVew.layer.shadowRadius = 2
+        searchVew.layer.shadowOpacity = 0.3
+        searchVew.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
+    
 }
 
-/****** Collection view config ******/
-extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+/****** Configure Collection view  data source ******/
+extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCell", for: indexPath) as! SubjectCell
-        return cell
-    }
-    
-    // MARK: - adjust size of cell
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfItemsPerRow: CGFloat = 2
-        let itemWidth = (collectionView.frame.size.width - 20) / numberOfItemsPerRow
-        return CGSize(width: itemWidth, height: 200)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
-    }
-    
-}
-
-/****** Configure Rating table view ******/
-extension HomeVC: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RatingCell
-        
-        if indexPath.row == 2 {
-            cell.studentNameLabel.text = "على"
-            cell.studentOpenionLabel.text = "ايبسوم بالعربي عربي انجليزي لوريم  "
-        } else {
-            cell.studentNameLabel.text = "محمد"
-            cell.studentOpenionLabel.text = "ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم   ايبسوم بالعربي عربي انجليزي لوريم  "
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TeachersCell
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
-    }
+}
+/****** Configure Collection view  delegate ******/
+extension HomeVC: UICollectionViewDelegate {
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
     
 }
+/****** Configure Collection view  cell size ******/
+extension HomeVC: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow: CGFloat = 2
+        let itemWidth = (collectionView.frame.size.width - 15) / numberOfItemsPerRow
+        return CGSize(width: itemWidth, height: 216)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+}
+
