@@ -8,12 +8,13 @@
 
 import UIKit
 import AARatingBar
+import Kingfisher
 
 class TeachersCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        updateContainerView()
+        //updateContainerView()
     }
     
     // MARK: - Outlets
@@ -29,6 +30,18 @@ class TeachersCell: UICollectionViewCell {
         containerView.layer.shadowRadius = 2
         containerView.layer.shadowOpacity = 0.6
         containerView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    func generateCell(teacherData: Teacher) {
+        teacherNameLabel.text = teacherData.name ?? "الاسم"
+        let teacherRate = teacherData.rate!
+        if let rate = NumberFormatter().number(from: teacherRate) {
+            teacherRatingView.value = CGFloat(truncating: rate)
+        }
+        if let url = URL(string: KIMAGEURL + teacherData.img!) {
+            teacherImage.kf.setImage(with: url)
+        }
+        teacherSubjectLabel.text = teacherData.language!
     }
     
 }

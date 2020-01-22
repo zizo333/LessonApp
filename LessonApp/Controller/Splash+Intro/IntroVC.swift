@@ -27,6 +27,7 @@ class IntroVC: UIViewController {
     // MARK: - Actions
     
     @IBAction func skipAction(_ sender: UIButton) {
+        saveIntroAtFirstTime(introDidAppear: true)
         goToLoginScreen()
     }
     
@@ -41,6 +42,7 @@ class IntroVC: UIViewController {
             }
             currentIndex += 1
         } else {
+            saveIntroAtFirstTime(introDidAppear: true)
             goToLoginScreen()
         }
     }

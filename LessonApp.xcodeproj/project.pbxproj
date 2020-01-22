@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242747F123D179D200D3F535 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242747F023D179D200D3F535 /* Constents.swift */; };
+		242747F723D17D2300D3F535 /* LoginRegisterObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242747F623D17D2300D3F535 /* LoginRegisterObjects.swift */; };
 		2428503A23CD22560093812C /* LoginRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428503923CD22560093812C /* LoginRegisterVC.swift */; };
+		2428898A23D5670700AC1A9C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2428898C23D5670700AC1A9C /* Localizable.strings */; };
 		2428961723CC92300009B9DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428961623CC92300009B9DD /* AppDelegate.swift */; };
 		2428961923CC92300009B9DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428961823CC92300009B9DD /* SceneDelegate.swift */; };
 		2428961B23CC92300009B9DD /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428961A23CC92300009B9DD /* Notes.swift */; };
@@ -25,17 +28,28 @@
 		2428964823CCD0AB0009B9DD /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428964723CCD0AB0009B9DD /* HelperMethods.swift */; };
 		2428964D23CCDD2E0009B9DD /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2428964C23CCDD2E0009B9DD /* RegisterVC.swift */; };
 		24298C4F23CEE64B00CF386C /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24298C4E23CEE64B00CF386C /* SubjectCell.swift */; };
+		24298DE023D285C800B6C2CF /* AllTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24298DDF23D285C800B6C2CF /* AllTeacher.swift */; };
 		2448C78323CE7EE600003ED7 /* DateOfBirth.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2448C78223CE7EE600003ED7 /* DateOfBirth.xib */; };
 		2448C78523CE88F500003ED7 /* DateOfBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448C78423CE88F500003ED7 /* DateOfBirth.swift */; };
+		246C58AD23D512C6007B68E9 /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C58AC23D512C6007B68E9 /* ChatRoomVC.swift */; };
+		246C58AF23D52562007B68E9 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C58AE23D52562007B68E9 /* ChatCell.swift */; };
+		246C58B123D52737007B68E9 /* MessageObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C58B023D52737007B68E9 /* MessageObjects.swift */; };
+		246C58B323D53738007B68E9 /* LogOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246C58B223D53738007B68E9 /* LogOutVC.swift */; };
 		24B5611323D12A16002CBEA3 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5611223D12A16002CBEA3 /* HomeVC.swift */; };
 		24B5611523D16427002CBEA3 /* TeachersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5611423D16427002CBEA3 /* TeachersCell.swift */; };
 		24DF220923CFF1DB006BC9DA /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DF220823CFF1DB006BC9DA /* RatingCell.swift */; };
+		24EDE2AB23D7E9A200E37607 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24EDE2AA23D7E9A200E37607 /* GoogleService-Info.plist */; };
 		24F29A3A23CDB1CB00C004A1 /* TeacherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */; };
 		CA55DA6884F4133AACD24ACB /* Pods_LessonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8878EE89B0E88D1CF7FC2B86 /* Pods_LessonApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242747F023D179D200D3F535 /* Constents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
+		242747F623D17D2300D3F535 /* LoginRegisterObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterObjects.swift; sourceTree = "<group>"; };
 		2428503923CD22560093812C /* LoginRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterVC.swift; sourceTree = "<group>"; };
+		2428898723D565BD00AC1A9C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2428898B23D5670700AC1A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2428898D23D5670A00AC1A9C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2428961323CC92300009B9DD /* LessonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2428961623CC92300009B9DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2428961823CC92300009B9DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,11 +69,17 @@
 		2428964723CCD0AB0009B9DD /* HelperMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 		2428964C23CCDD2E0009B9DD /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		24298C4E23CEE64B00CF386C /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
+		24298DDF23D285C800B6C2CF /* AllTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeacher.swift; sourceTree = "<group>"; };
 		2448C78223CE7EE600003ED7 /* DateOfBirth.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateOfBirth.xib; sourceTree = "<group>"; };
 		2448C78423CE88F500003ED7 /* DateOfBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.swift; sourceTree = "<group>"; };
+		246C58AC23D512C6007B68E9 /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
+		246C58AE23D52562007B68E9 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		246C58B023D52737007B68E9 /* MessageObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageObjects.swift; sourceTree = "<group>"; };
+		246C58B223D53738007B68E9 /* LogOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutVC.swift; sourceTree = "<group>"; };
 		24B5611223D12A16002CBEA3 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		24B5611423D16427002CBEA3 /* TeachersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersCell.swift; sourceTree = "<group>"; };
 		24DF220823CFF1DB006BC9DA /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
+		24EDE2AA23D7E9A200E37607 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherVC.swift; sourceTree = "<group>"; };
 		8878EE89B0E88D1CF7FC2B86 /* Pods_LessonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LessonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16EF864BB827FEF7A492043 /* Pods-LessonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LessonApp.debug.xcconfig"; path = "Target Support Files/Pods-LessonApp/Pods-LessonApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +114,7 @@
 				2428962F23CC92880009B9DD /* LoginVC.swift */,
 				2428964C23CCDD2E0009B9DD /* RegisterVC.swift */,
 				2448C78423CE88F500003ED7 /* DateOfBirth.swift */,
+				242747F623D17D2300D3F535 /* LoginRegisterObjects.swift */,
 			);
 			path = "Login+Register";
 			sourceTree = "<group>";
@@ -111,6 +132,7 @@
 		2428960A23CC92300009B9DD = {
 			isa = PBXGroup;
 			children = (
+				2428898C23D5670700AC1A9C /* Localizable.strings */,
 				2428961A23CC92300009B9DD /* Notes.swift */,
 				2428961523CC92300009B9DD /* LessonApp */,
 				2428961423CC92300009B9DD /* Products */,
@@ -168,6 +190,7 @@
 				24298C4E23CEE64B00CF386C /* SubjectCell.swift */,
 				24DF220823CFF1DB006BC9DA /* RatingCell.swift */,
 				24B5611423D16427002CBEA3 /* TeachersCell.swift */,
+				246C58AE23D52562007B68E9 /* ChatCell.swift */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -194,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2428962723CC92320009B9DD /* Info.plist */,
+				24EDE2AA23D7E9A200E37607 /* GoogleService-Info.plist */,
 				2428961F23CC92300009B9DD /* LessonApp.xcdatamodeld */,
 			);
 			path = Config;
@@ -202,6 +226,8 @@
 		2428964323CC9BA70009B9DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				242747F023D179D200D3F535 /* Constents.swift */,
+				246C58B023D52737007B68E9 /* MessageObjects.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,11 +242,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		24298DDE23D285AF00B6C2CF /* HomeObjects */ = {
+			isa = PBXGroup;
+			children = (
+				24298DDF23D285C800B6C2CF /* AllTeacher.swift */,
+			);
+			path = HomeObjects;
+			sourceTree = "<group>";
+		};
 		24F29A3823CDB1A200C004A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */,
 				24B5611223D12A16002CBEA3 /* HomeVC.swift */,
+				24F29A3923CDB1CB00C004A1 /* TeacherVC.swift */,
+				246C58AC23D512C6007B68E9 /* ChatRoomVC.swift */,
+				246C58B223D53738007B68E9 /* LogOutVC.swift */,
+				24298DDE23D285AF00B6C2CF /* HomeObjects */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -277,6 +314,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 2428960A23CC92300009B9DD;
 			productRefGroup = 2428961423CC92300009B9DD /* Products */;
@@ -293,6 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2428898A23D5670700AC1A9C /* Localizable.strings in Resources */,
+				24EDE2AB23D7E9A200E37607 /* GoogleService-Info.plist in Resources */,
 				2448C78323CE7EE600003ED7 /* DateOfBirth.xib in Resources */,
 				2428963223CC94770009B9DD /* Main.storyboard in Resources */,
 				2428962623CC92320009B9DD /* LaunchScreen.storyboard in Resources */,
@@ -350,7 +390,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2428962E23CC92780009B9DD /* CustomView.swift in Sources */,
+				246C58AD23D512C6007B68E9 /* ChatRoomVC.swift in Sources */,
 				2428961B23CC92300009B9DD /* Notes.swift in Sources */,
+				246C58AF23D52562007B68E9 /* ChatCell.swift in Sources */,
 				2428964823CCD0AB0009B9DD /* HelperMethods.swift in Sources */,
 				2428963023CC92890009B9DD /* LoginVC.swift in Sources */,
 				24B5611523D16427002CBEA3 /* TeachersCell.swift in Sources */,
@@ -363,8 +405,13 @@
 				2428963C23CC963B0009B9DD /* IntroCollectionViewCell.swift in Sources */,
 				24298C4F23CEE64B00CF386C /* SubjectCell.swift in Sources */,
 				2428963623CC94F00009B9DD /* SplashVC.swift in Sources */,
+				242747F723D17D2300D3F535 /* LoginRegisterObjects.swift in Sources */,
 				2428963A23CC960B0009B9DD /* IntroData.swift in Sources */,
 				2428963523CC94F00009B9DD /* IntroVC.swift in Sources */,
+				246C58B123D52737007B68E9 /* MessageObjects.swift in Sources */,
+				24298DE023D285C800B6C2CF /* AllTeacher.swift in Sources */,
+				246C58B323D53738007B68E9 /* LogOutVC.swift in Sources */,
+				242747F123D179D200D3F535 /* Constents.swift in Sources */,
 				2428964D23CCDD2E0009B9DD /* RegisterVC.swift in Sources */,
 				2428964523CCA5870009B9DD /* CustomTF.swift in Sources */,
 				24B5611323D12A16002CBEA3 /* HomeVC.swift in Sources */,
@@ -375,10 +422,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		2428898C23D5670700AC1A9C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2428898B23D5670700AC1A9C /* en */,
+				2428898D23D5670A00AC1A9C /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2428962423CC92320009B9DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2428962523CC92320009B9DD /* Base */,
+				2428898723D565BD00AC1A9C /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -390,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -450,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

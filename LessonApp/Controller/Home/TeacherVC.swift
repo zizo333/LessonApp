@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import AARatingBar
+import Kingfisher
+import Alamofire
+import NVActivityIndicatorView
 
 class TeacherVC: UIViewController {
 
+    // MARK: - Variables
+    var teacherData: Teacher?
+    
     @IBOutlet weak var rightLayout: NSLayoutConstraint!
     @IBOutlet weak var swipeButtonsContainer: UIView!
     @IBOutlet weak var swipeButton: UIButton!
@@ -20,11 +27,25 @@ class TeacherVC: UIViewController {
     @IBOutlet weak var notesLabel: UILabel!
     // MARK: - Rating outlets
     @IBOutlet weak var ratingTableView: UITableView!
+    // teacher outlets
+    @IBOutlet weak var teacherNameLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var ratingView: AARatingBar!
+    @IBOutlet weak var tNameLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var certificateLabel: UILabel!
+    @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var teacherImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         updateContainerView()
+        if teacherData != nil {
+            updateTeacherInfo()
+        }
     }
     
     // MARK: - Actions
@@ -44,6 +65,41 @@ class TeacherVC: UIViewController {
     }
     @IBAction func goToRegister(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func goToChatRoom(_ sender: UIButton) {
+        let chatVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "chatRoomVC") as! ChatRoomVC
+        
+        if let parameters = getCheckChatParameters() {
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(), .none)
+            checkChatRequest(parameters: parameters) { (chatId) in
+                if let chatId = chatId {
+                    chatVC.chatId = chatId
+                    chatVC.teacherData = self.teacherData
+                }
+                
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating(.none)
+                self.present(chatVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    // get parameters
+    private func getCheckChatParameters() -> [String : Any]? {
+        guard let userId = getUserId(),
+            let teacherId = teacherData?.id,
+            let teacherName = teacherData?.name,
+            let teacherImage = teacherData?.img
+        else { return nil }
+        let userName = getFullName()
+        let parameters: [String : Any] = [
+            "user_id" : userId,
+            "user_name" : userName,
+            "teacher_id" : teacherId,
+            "teacher_name" : teacherName,
+            "teacher_img" : teacherImage
+        ]
+        return parameters
     }
     
 }
@@ -66,6 +122,25 @@ extension TeacherVC {
         let height: CGFloat = label.frame.height
         label.removeFromSuperview()
         return height
+    }
+    // MARK: - update elements
+    func updateTeacherInfo() {
+        if let tInfo = teacherData {
+            teacherNameLabel.text = tInfo.name ?? "الاسم"
+            tNameLabel.text = tInfo.name ?? "الاسم"
+            if let rate = NumberFormatter().number(from: tInfo.rate!) {
+                ratingView.value = CGFloat(truncating: rate)
+            }
+            subjectLabel.text = tInfo.language ?? ""
+            certificateLabel.text = tInfo.certification ?? ""
+            favoriteLabel.text = tInfo.favorite ?? ""
+            cityLabel.text = tInfo.city ?? ""
+            scrollViewHeight.constant = scrollViewHeight.constant + getHeight(text: tInfo.notes, width: noteLabel.frame.size.width, font: noteLabel.font) - 20
+            noteLabel.text = tInfo.notes ?? ""
+            if let url = URL(string: KIMAGEURL + tInfo.img!) {
+                teacherImageView.kf.setImage(with: url)
+            }
+        }
     }
 }
 
@@ -122,4 +197,24 @@ extension TeacherVC: UITableViewDataSource, UITableViewDelegate {
 //        return UITableView.automaticDimension
 //    }
     
+}
+
+// MARK: - check chat request
+extension TeacherVC {
+    func checkChatRequest(parameters: [String : Any], completion: @escaping(_ chatId: String?) -> Void) {
+        guard let url = URL(string: KCHEXKCHAT) else { return }
+        request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                do {
+                    let _data = try JSONDecoder().decode([CheckChat].self, from: data)
+                    return completion(_data[0].chatId)
+                } catch {
+                    self.alert(msg: error.localizedDescription)
+                }
+            case .failure(_):
+                self.alert(msg: "لا يوجد اتصال بالانترنت")
+            }
+        }
+    }
 }

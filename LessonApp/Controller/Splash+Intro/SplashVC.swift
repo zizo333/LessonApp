@@ -33,5 +33,22 @@ class SplashVC: UIViewController {
             }
         }
     }
+    
+    // MARK: - Actions
+    @IBAction func goToSecondScreen(_ sender: UIButton) {
+        if let _ = getUserId() {
+            let homeVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC") as! UITabBarController
+            self.present(homeVc, animated: true, completion: nil)
+        } else {
+            if checkIntroDidAppear() {
+                let loginVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "loginVC") as! LoginVC
+                self.present(loginVc, animated: true, completion: nil)
+            } else {
+                let introVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "introVC") as! IntroVC
+                self.present(introVc, animated: true, completion: nil)
+            }
+        }
+    }
+    
 
 }

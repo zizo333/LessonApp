@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
+import Alamofire
+
+protocol UserInfoDelegate {
+    func setUserInfo(email: String, password: String)
+}
 
 class RegisterVC: LoginRegisterVC {
     
@@ -20,7 +26,9 @@ class RegisterVC: LoginRegisterVC {
     var leftButtons: [UIButton] = []
     var leftConfirmPassButton: UIButton!
     var rememberToggle: Bool = false
-    var gender: Gender!
+    var gender: Gender?
+    var selectedLabelFlag = false
+    var delegate: UserInfoDelegate?
 
     // MARK: - Outlets
     @IBOutlet weak var containerView: UIView!
@@ -67,6 +75,20 @@ class RegisterVC: LoginRegisterVC {
     
     @IBAction func register() {
         
+        guard let parameters = checkFields() else {
+            return
+        }
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(), .none)
+        registerRequest(parameters: parameters) { (flag) in
+            if flag == 1 {
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating(.none)
+                self.delegate?.setUserInfo(email: parameters["email"] as! String, password: parameters["password"] as! String)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.alert(msg: "تأكد من ادخال البيانات")
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating(.none)
+            }
+        }
     }
     
     /***** Helper methods *****/
@@ -81,6 +103,38 @@ class RegisterVC: LoginRegisterVC {
         updatePasswordTF(passwordTF: textFields[6], index: 0)
         updatePasswordTF(passwordTF: textFields[7], index: 1)
         addGesture(scrollViewContainer: self.scrollViewContainer)
+    }
+    
+    func checkFields() -> [String : Any]? {
+        var parameters: [String : Any] = [:]
+        guard let firstName = textFields[0].text, !firstName.isEmpty,
+            let secondName = textFields[1].text, !secondName.isEmpty,
+            let email = textFields[2].text, !email.isEmpty,
+            let country = textFields[3].text, !country.isEmpty,
+            let nationality = textFields[4].text, !nationality.isEmpty,
+            let phone = textFields[5].text, !phone.isEmpty,
+            let pass = textFields[6].text, !pass.isEmpty,
+            let confirmPass = textFields[7].text, !confirmPass.isEmpty,
+            selectedLabelFlag, let _ = gender else {
+                self.alert(msg: "تأكد من ادخال البيانات")
+                return nil
+        }
+        guard pass == confirmPass else {
+            self.alert(msg: "كلمة المرور غير متطابقة")
+            return nil
+        }
+        parameters = [
+            "first_name" : firstName,
+            "secend_name" : secondName,
+            "email" : email,
+            "country" : country,
+            "nationality" : nationality,
+            "phone" : phone,
+            "password" : pass,
+            "birthdate" : dateLabel.text!,
+            "gender" : "\(gender!)"
+        ]
+        return parameters
     }
     
     // MARK: - update gender buttons
@@ -103,6 +157,8 @@ extension RegisterVC: DatePickerDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         dateLabel.text = formatter.string(from: date)
+        dateLabel.textColor = #colorLiteral(red: 0.7763929963, green: 0.4258784652, blue: 0.128765732, alpha: 1)
+        selectedLabelFlag = true
     }
     
 }
@@ -121,4 +177,26 @@ extension RegisterVC: UITextFieldDelegate {
     }
 }
 
-
+/****** Register request ******/
+extension RegisterVC {
+    
+    func registerRequest(parameters: [String : Any], completion: @escaping(_ flag: Int) -> Void) {
+        guard let url = URL(string: KREGISTER) else { return }
+        request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).validate().responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                do {
+                    let _data = try JSONDecoder().decode([RegisterData].self, from: data)
+                    return completion(_data[0].flag!)
+                } catch {
+                    self.alert(msg: error.localizedDescription)
+                    NVActivityIndicatorPresenter.sharedInstance.stopAnimating(.none)
+                }
+            case .failure(_):
+                self.alert(msg: "لا يوجد اتصال بالانترنت")
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating(.none)
+            }
+        }
+    }
+    
+}
