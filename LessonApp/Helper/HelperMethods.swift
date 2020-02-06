@@ -12,7 +12,7 @@ let def = UserDefaults.standard
 extension UIViewController {
         
     func alert(msg:String) {
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: " ", message: msg, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "حسنا", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
