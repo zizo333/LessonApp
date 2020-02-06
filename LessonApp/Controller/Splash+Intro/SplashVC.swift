@@ -37,7 +37,7 @@ class SplashVC: UIViewController {
     // MARK: - Actions
     @IBAction func goToSecondScreen(_ sender: UIButton) {
         if let _ = getUserId() {
-            let homeVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC") as! UITabBarController
+            let homeVc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC") as! HomeVC
             self.present(homeVc, animated: true, completion: nil)
         } else {
             if checkIntroDidAppear() {

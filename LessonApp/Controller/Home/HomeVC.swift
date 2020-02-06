@@ -29,6 +29,13 @@ class HomeVC: UIViewController {
         loadAllTeachers()
     }
     
+    // MARK: - Actions
+    @IBAction func logOutAction(_ sender: UIButton) {
+        removeCurrentUser()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     /****** load all teachers ******/
     func loadAllTeachers() {
         NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData(), .none)

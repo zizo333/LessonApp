@@ -1472,7 +1472,7 @@
         <!--Home-->
         <scene sceneID="F8A-M5-8kT">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="eTk-w8-LxO" customClass="HomeVC" customModule="LessonApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="homeVC" modalPresentationStyle="fullScreen" id="eTk-w8-LxO" customClass="HomeVC" customModule="LessonApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t0g-tx-yfS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1490,14 +1490,15 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0k-qu-dGv">
                                                 <rect key="frame" x="16" y="16" width="382" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbD-g5-la1">
-                                                        <rect key="frame" x="352" y="5" width="30" height="30"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbD-g5-la1">
+                                                        <rect key="frame" x="352" y="5.3333333333333357" width="30" height="29"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="f2R-D5-d2S"/>
                                                             <constraint firstAttribute="width" constant="30" id="gEV-CD-o50"/>
                                                         </constraints>
-                                                        <state key="normal" image="PNG-1">
+                                                        <color key="tintColor" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" backgroundImage="power" catalog="system">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -1507,6 +1508,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="goToRegister:" destination="rNm-8A-WTq" eventType="touchUpInside" id="8iu-BV-m2V"/>
+                                                            <action selector="logOutAction:" destination="eTk-w8-LxO" eventType="touchUpInside" id="NiH-e9-hYQ"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EA0-Md-rId">
@@ -1582,7 +1584,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-Dh-KUd">
-                                <rect key="frame" x="0.0" y="217" width="414" height="596"/>
+                                <rect key="frame" x="0.0" y="217" width="414" height="645"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أحدث المعلمين" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d72-OX-Vxm">
                                         <rect key="frame" x="272" y="50" width="112" height="26"/>
@@ -1600,7 +1602,7 @@
                                         <state key="normal" backgroundImage="list.dash" catalog="system"/>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dnJ-nc-FjL">
-                                        <rect key="frame" x="30" y="96" width="354" height="500"/>
+                                        <rect key="frame" x="30" y="96" width="354" height="549"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Sf3-lh-oNx">
                                             <size key="itemSize" width="183" height="223"/>
@@ -1807,55 +1809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwm-fl-ucF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3400.0000000000005" y="868.52678571428567"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="Vi3-Dd-WFy">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Kkb-ah-MIa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AYy-eD-JPC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="CNU-3F-Lg0"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Deals Active" id="NrI-bl-Hu3"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iz2-aX-2aN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4179.7101449275369" y="868.52678571428567"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="08L-zm-Owg">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="5pS-np-e0m" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Agg-yv-e8a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Fby-hR-e5Q"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Lessons Active" id="coB-Au-66H"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eO8-bx-UwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4957.971014492754" y="868.52678571428567"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="SQ3-9M-zuG">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="TQ8-1W-KP2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ESj-0b-4uy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="FwI-dP-09y"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="message-circle Active" id="MvO-Fb-LjZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aj7-Xh-vZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5789.8550724637689" y="868.52678571428567"/>
+            <point key="canvasLocation" x="4036" y="145"/>
         </scene>
         <!--Item-->
         <scene sceneID="08w-W9-Hs6">
@@ -1894,11 +1848,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SYC-5U-jhD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="Offers Active" id="Hdl-8s-3Zf"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="power" catalog="system" id="Hdl-8s-3Zf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="THo-oe-u2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6615.9420289855079" y="868.52678571428567"/>
+            <point key="canvasLocation" x="4788" y="145"/>
         </scene>
         <!--جون دو-->
         <scene sceneID="XG5-IR-vA1">
@@ -2306,7 +2260,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جميع المراحل" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEM-w3-tDX">
-                                                                                        <rect key="frame" x="151.66666666666666" y="20.333333333333371" width="89.666666666666657" height="19.333333333333329"/>
+                                                                                        <rect key="frame" x="151.66666666666666" y="20.666666666666742" width="89.666666666666657" height="19.333333333333329"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                                         <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="0.80291970800000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -2745,7 +2699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdU-BY-k33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3400.0000000000005" y="1553.5714285714284"/>
+            <point key="canvasLocation" x="4035" y="844"/>
         </scene>
         <!--Chat RoomVC-->
         <scene sceneID="vfO-Pp-9f8">
@@ -2954,40 +2908,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az7-4X-a2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4275.36231884058" y="1559.5982142857142"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="lf6-Z6-iVi">
-            <objects>
-                <tabBarController storyboardIdentifier="homeVC" modalPresentationStyle="fullScreen" id="nYJ-Ol-8Uo" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="kb1-g2-LDf"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbu-IH-CPb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.77639299630000003" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.10980392156862745" green="0.098039215686274508" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.4258784652" blue="0.12876573199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="eTk-w8-LxO" kind="relationship" relationship="viewControllers" id="DfQ-GZ-M5c"/>
-                        <segue destination="Kkb-ah-MIa" kind="relationship" relationship="viewControllers" id="3F6-aM-1B9"/>
-                        <segue destination="5pS-np-e0m" kind="relationship" relationship="viewControllers" id="9Yp-4I-G97"/>
-                        <segue destination="TQ8-1W-KP2" kind="relationship" relationship="viewControllers" id="pnF-om-yaC"/>
-                        <segue destination="WfC-fU-PZ3" kind="relationship" relationship="viewControllers" id="t06-7w-pXR"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5fh-Vu-lX0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4050" y="146"/>
+            <point key="canvasLocation" x="4787" y="844"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Deals Active" width="19.333333969116211" height="17.333333969116211"/>
         <image name="Home Active" width="18.666666030883789" height="16.666666030883789"/>
-        <image name="Lessons Active" width="24" height="19.666666030883789"/>
-        <image name="Offers Active" width="18" height="18"/>
-        <image name="PNG-1" width="31" height="31"/>
         <image name="Search" width="14" height="14.333333015441895"/>
         <image name="Splash Background" width="124.66666412353516" height="181"/>
         <image name="Teacher cirle" width="80" height="80"/>
@@ -3005,13 +2930,13 @@
         <image name="logo2" width="114" height="77.333335876464844"/>
         <image name="mail" width="35" height="35"/>
         <image name="math-2" width="230.5" height="136.5"/>
-        <image name="message-circle Active" width="18" height="18"/>
         <image name="name" width="35" height="35"/>
         <image name="notificaion" width="17" height="20"/>
         <image name="password" width="35" height="35"/>
         <image name="path-1" width="18" height="18"/>
         <image name="path-2" width="20" height="16"/>
         <image name="path-3" width="22" height="20.666666030883789"/>
+        <image name="power" catalog="system" width="64" height="62"/>
         <image name="profile" width="18" height="18"/>
         <image name="send" width="46" height="46"/>
         <image name="twitter" width="55" height="55"/>
