@@ -18,7 +18,7 @@ extension UIViewController {
     }
     
     func goToHome() {
-        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC") as! UITabBarController
+        let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "homeVC") as! HomeVC
         self.present(homeVC, animated: true, completion: nil)
     }
     

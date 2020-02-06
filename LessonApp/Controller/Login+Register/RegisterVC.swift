@@ -132,7 +132,9 @@ class RegisterVC: LoginRegisterVC {
             "phone" : phone,
             "password" : pass,
             "birthdate" : dateLabel.text!,
-            "gender" : "\(gender!)"
+            "gender" : "\(gender!)",
+            "type" : 1,
+            "balance" : 1
         ]
         return parameters
     }
